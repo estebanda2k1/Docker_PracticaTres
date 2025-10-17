@@ -16,22 +16,33 @@ docker run -d --name <nombre contenedor> --mount type=bind,source=<ruta carpeta 
 
 ### Crear un contenedor con la imagen nginx:alpine, mapear todos por puertos, para la ruta carpeta host colocar el directorio en donde se encuentra la carpeta html en tu computador y para la ruta carpeta contenedor: /usr/share/nginx/html (esta ruta se obtiene al revisar la documentación de la imagen)
 ![Volúmenes](volumen-host.PNG)
-# COMPLETAR CON EL COMANDO
+
+```
+docker run -d --name contenedor_dos -p  80:80 -v C:\Users\Esteban\Desktop\nginx\html:/usr/share/nginx/html nginx:alpine
+```
 
 ### ¿Qué sucede al ingresar al servidor de nginx?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+
+Salio el error 403, esto se debe a que no hay ningun archivo html que abra.
+
 
 ### ¿Qué pasa con el archivo index.html del contenedor?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+
+El contenedor busca, pero al no encontrarlo salta el error 403
+
 
 ### Ir a https://html5up.net/ y descargar un template gratuito, descomprirlo dentro de tu computador en la carpeta html
 ### ¿Qué sucede al ingresar al servidor de nginx?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+Carga el index.html que se descagó de la página web
+
+<img width="1599" height="720" alt="image" src="https://github.com/user-attachments/assets/fd313bab-6a35-4638-a1e0-161149f43d05" />
 
 ### Eliminar el contenedor
-# COMPLETAR CON EL COMANDO
+```
+docker rm -f contenedor_dos
+```
 
 ### ¿Qué sucede al crear nuevamente un contenedor montado al directorio definidos anteriormente?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+Vuelve a cargar el mismo archivo html.
 
 
